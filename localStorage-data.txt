@@ -1,0 +1,10 @@
+[
+    {"text":"Get out of bed pronto!"},
+    {"text":"Say my morning prayer/meditation"},
+    {"text":"Go for a 1 hour jogging/work-out session"},
+    {"text":"Make and eat breakfast"},
+    {"text":"Take out the trash"},
+    {"text":"Check bicycle wheels and tires"},
+    {"text":"Bike down to the office"},
+    {"text":"Teach a class on Enterprise Architecture"}
+]
