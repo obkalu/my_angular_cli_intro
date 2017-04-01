@@ -1,17 +1,17 @@
 <div *ngIf="appState == 'default'">
-  <h3>Add ToDo</h3>
+  <h3>Add ToDo:</h3>
   <form (submit)="addTodo()">
     <input class="form-control" #txtTodo type="text" name="text" [(ngModel)]="text" placeholder="New Todo" />
   </form>
 </div>
 <div *ngIf="appState == 'edit'">
-  <h3>Edit ToDo</h3>
+  <h3>Edit ToDo:</h3>
   <form (submit)="updateTodo()">
     <input class="form-control" #txtTodo type="text" name="text" [(ngModel)]="text" placeholder="New Todo" />
   </form>
 </div>
 
-<h3>My ToDo List</h3>
+<h3>My ToDo List:</h3>
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let todo of todos; let i=index">
     {{i+1}}. {{todo.text}} | <a href="#" (click)="editTodo($event, todo.text)">Edit</a> | <button class="btn btn-danger btn-sm" (click)="deleteTodo(todo.text)">X</button>
