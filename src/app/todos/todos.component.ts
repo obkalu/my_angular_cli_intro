@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import { TodoService } from '../todo.service';
 
 @Component({
@@ -24,7 +25,7 @@ export class TodosComponent implements OnInit, AfterViewInit {
   addTodo() {
     const newTodo = {
       text : this.text
-    }
+    };
     this.todos.push(newTodo);
     this.todoService.addTodo(newTodo);
     this.text = '';
@@ -46,7 +47,6 @@ export class TodosComponent implements OnInit, AfterViewInit {
     this.text = todoText;
     this.viewChild.nativeElement.focus();
     this.oldText = todoText;
-
   }
 
   updateTodo() {
