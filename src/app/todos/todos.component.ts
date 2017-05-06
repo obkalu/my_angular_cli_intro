@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { TodoService } from '../todo.service';
 
 @Component({
@@ -6,24 +6,23 @@ import { TodoService } from '../todo.service';
   templateUrl: './todos.component.html',
   styleUrls: ['./todos.component.css']
 })
-export class TodosComponent implements OnInit {
+export class TodosComponent implements OnInit, AfterViewInit {
   todos;
-  text : string;
+  text: string;
   @ViewChild('txtTodo') viewChild;
   appState = 'default';
   oldText;
 
-  constructor(private todoService : TodoService) {
-    
+  constructor(private todoService: TodoService) {
   }
 
   ngOnInit() {
     this.todos = this.todoService.getTodos();
-    this.text = "";    
+    this.text = '';
   }
 
   addTodo() {
-    var newTodo = {
+    const newTodo = {
       text : this.text
     }
     this.todos.push(newTodo);
@@ -32,8 +31,8 @@ export class TodosComponent implements OnInit {
   }
 
   deleteTodo(todoText) {
-    for(var i=0; i<this.todos.length;i++) {
-      if(this.todos[i].text == todoText) {
+    for (let i = 0; i < this.todos.length; i++) {
+      if (this.todos[i].text === todoText) {
         this.todos.splice(i, 1);
         break;
       }
@@ -51,8 +50,8 @@ export class TodosComponent implements OnInit {
   }
 
   updateTodo() {
-    for(var i=0; i<this.todos.length;i++) {
-      if(this.todos[i].text == this.oldText) {
+    for (let i = 0; i < this.todos.length; i++) {
+      if (this.todos[i].text === this.oldText) {
         this.todos[i].text = this.text;
         break;
       }
