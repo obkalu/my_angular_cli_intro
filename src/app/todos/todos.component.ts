@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+
 import { TodoService } from '../todo.service';
 
 @Component({
